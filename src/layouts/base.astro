@@ -1,0 +1,164 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+import LanguagePicker from "../components/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Automatically generated posts by AI for seamless social media integration."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="refresh" content="0;url=/es/" />
+
+    <meta property="og:title" content="Easy Post IA" />
+    <meta
+      property="og:description"
+      content="Automatically generated posts by AI for seamless social media integration."
+    />
+    <meta property="og:image" content="URL_to_your_image.jpg" />
+    <meta property="og:url" content="https://www.yourwebsite.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Easy Post IA" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Easy Post IA" />
+    <meta
+      name="twitter:description"
+      content="Automatically generated posts by AI for seamless social media integration."
+    />
+    <meta name="twitter:image" content="URL_to_your_image.jpg" />
+    <meta name="twitter:url" content="https://www.yourwebsite.com" />
+
+    <title>EasyPostIA</title>
+  </head>
+  <body>
+    <slot />
+    <footer>
+      sajksjksa
+      <LanguagePicker />
+    </footer>
+  </body>
+</html>
+<style is:global>
+  :root {
+    /* Color primary */
+    --palette-primary-main: "#2196f3";
+    --palette-primary-dark: "#1565c0";
+    --palette-primary-light: "#1565c0";
+
+    /* Color secondary */
+    --palette-secondary-main: "#FFCC33";
+    --palette-secondary-contrastText: "#4D23BB";
+
+    /* Text */
+    --palette-text-primary: rgba(0, 0, 0, 0.87);
+    --palette-text-secondary: rgba(0, 0, 0, 0.6);
+    --palette-text-disabled: rgba(0, 0, 0, 0.38);
+
+    /* Background Colors */
+    --palette-background-paper: #fff;
+    --palette-background-default: #fff;
+
+    /* Button and Action States */
+    --palette-action-active: rgba(0, 0, 0, 0.54);
+    --palette-action-hover: rgba(0, 0, 0, 0.04);
+    --palette-action-hover-opacity: 0.04;
+    --palette-action-selected: rgba(0, 0, 0, 0.08);
+    --palette-action-selected-opacity: 0.08;
+    --palette-action-disabled: rgba(0, 0, 0, 0.26);
+    --palette-action-disabled-background: rgba(0, 0, 0, 0.12);
+    --palette-action-disabled-opacity: 0.38;
+    --palette-action-focus: rgba(0, 0, 0, 0.12);
+    --palette-action-focus-opacity: 0.12;
+    --palette-action-activated-opacity: 0.12;
+
+    --spacing-2: 2px;
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-64: 64px;
+
+    /* zIndex Variables */
+    --z-index-mobile-stepper: 1000;
+    --z-index-fab: 1050;
+    --z-index-speed-dial: 1050;
+    --z-index-app-bar: 1100;
+    --z-index-drawer: 1200;
+    --z-index-modal: 1300;
+    --z-index-snackbar: 1400;
+    --z-index-tooltip: 1500;
+
+    /* Typography Variables */
+    --typography-html-font-size: 16px;
+    --typography-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    --typography-font-size: 14px;
+    --typography-font-weight-light: 300;
+    --typography-font-weight-regular: 400;
+    --typography-font-weight-medium: 500;
+    --typography-font-weight-bold: 700;
+
+    /* Gray color */
+    --palette-gray-50: #fafafa;
+    --palette-gray-100: #f5f5f5;
+    --palette-gray-200: #eeeeee;
+    --palette-gray-300: #e0e0e0;
+    --palette-gray-400: #bdbdbd;
+    --palette-gray-500: #9e9e9e;
+    --palette-gray-600: #757575;
+    --palette-gray-700: #616161;
+    --palette-gray-800: #424242;
+    --palette-gray-900: #212121;
+  }
+
+  /* For browsers that support clamp  
+    * My config: https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=320&minRatio=1.25&maxFontSize=14&maxWidth=2560&maxRatio=1.3&steps=overline%2Ccaption%2Cbody1%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=body1&prefix=font-size&useContainerWidth=false&includeFallbacks=true&useRems=false&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=320
+    *
+  * */
+  @supports (font-size: clamp(1rem, 1vi, 1rem)) {
+    :root {
+      --font-size-overline: clamp(10.24px, -0.09vi + 10.52px, 8.28px);
+      --font-size-caption: clamp(12.8px, -0.09vi + 13.09px, 10.77px);
+      --font-size-body1: clamp(16px, -0.09vi + 16.29px, 14px);
+      --font-size-h5: clamp(20px, -0.08vi + 20.26px, 18.2px);
+      --font-size-h4: clamp(25px, -0.06vi + 25.19px, 23.66px);
+      --font-size-h3: clamp(31.25px, -0.02vi + 31.32px, 30.76px);
+      --font-size-h2: clamp(39.06px, 0.04vi + 38.93px, 39.99px);
+      --font-size-h1: clamp(48.83px, 0.14vi + 48.38px, 51.98px);
+    }
+  }
+  /*   For browsers that don't support clamp */
+  @supports not (font-size: clamp(1rem, 1vi, 1rem)) {
+    :root {
+      --font-size-overline: 10.24px;
+      --font-size-caption: 12.8px;
+      --font-size-body1: 16px;
+      --font-size-h5: 20px;
+      --font-size-h4: 25px;
+      --font-size-h3: 31.25px;
+      --font-size-h2: 39.06px;
+      --font-size-h1: 48.83px;
+    }
+    @media screen and (min-width: 2560px) {
+      :root {
+        --font-size-overline: 8.28px;
+        --font-size-caption: 10.77px;
+        --font-size-body1: 14px;
+        --font-size-h5: 18.2px;
+        --font-size-h4: 23.66px;
+        --font-size-h3: 30.76px;
+        --font-size-h2: 39.99px;
+        --font-size-h1: 51.98px;
+      }
+    }
+  }
+</style>
