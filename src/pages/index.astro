@@ -1,0 +1,65 @@
+---
+import "../styles/global.css";
+import Home from "../components/Home.astro";
+import Navbar from "../components/Navbar.astro";
+
+import LanguagePicker from "../components/LanguagePicker.astro";
+
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Automatically generated posts by AI for seamless social media integration."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:title" content="Easy Post IA" />
+    <meta
+      property="og:description"
+      content="Automatically generated posts by AI for seamless social media integration."
+    />
+    <meta property="og:image" content="URL_to_your_image.jpg" />
+    <meta property="og:url" content="https://www.yourwebsite.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Easy Post IA" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Easy Post IA" />
+    <meta
+      name="twitter:description"
+      content="Automatically generated posts by AI for seamless social media integration."
+    />
+    <meta name="twitter:image" content="URL_to_your_image.jpg" />
+    <meta name="twitter:url" content="https://www.yourwebsite.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>EasyPostIA</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+
+    <Home />
+
+    <footer>
+      sajksjksa
+      <LanguagePicker />
+    </footer>
+  </body>
+</html>

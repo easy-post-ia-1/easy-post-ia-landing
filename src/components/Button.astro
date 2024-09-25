@@ -1,0 +1,8 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<button class="box__btn-cta">{t("btn.cta")}</button>
