@@ -1,0 +1,14 @@
+---
+const {
+  variant = "contained",
+  text = null,
+  size = "medium",
+  textWeight = "normal",
+  shadow = false,
+} = Astro.props;
+---
+
+<button
+  class=`btn-variant-${variant} btn-size-${size} btn-text-weigth-${textWeight} btn-shadow-${shadow}`
+  >{text}</button
+>

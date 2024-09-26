@@ -30,7 +30,7 @@ export const ui = {
     "section.get_app.desc2": "simplify your life.",
 
     "btn.login": "Login",
-    "btn.sign_up": "Sign Up",
+    "btn.sign_up": "Get Started",
     "btn.cta": "Get App",
     "btn.install": "Install App",
 
@@ -63,7 +63,7 @@ export const ui = {
     "section.get_app.desc2": "simplifica tu vida",
 
     "btn.login": "Iniciar sesión",
-    "btn.sign_up": "Regístrate",
+    "btn.sign_up": "Regístrate!",
     "btn.cta": "Obtener aplicación",
     "btn.install": "Instalar App",
 
