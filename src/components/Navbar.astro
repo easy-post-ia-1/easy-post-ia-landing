@@ -1,23 +1,117 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import { Icon } from "astro-icon/components";
+import logoImg from "../icons/logo.svg";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<nav>
-  <div>
-    <Icon name="logo" />
+<nav class="navbar">
+  <div class="logo">
+    <Image
+      class="logo__img"
+      src={logoImg}
+      alt="Quick envelope"
+      width="100"
+      height="70"
+    />
+    <h3 class="logo__title">EASYPOST IA</h3>
   </div>
 
-  <div>
-    <li class=""></li>
-    <li class=""></li>
-    <li class=""></li>
+  <div class="navbar__box-right">
+    <ul class="navbar__nav list-none">
+      <li class=""><a href="#home">{t("nav.home")}</a></li>
+      <li class=""><a href="#features">{t("nav.features")}</a></li>
+      <li class=""><a href="#about-us">{t("nav.about_us")}</a></li>
+    </ul>
+    <span class="navbar__vl"></span>
 
-    <span></span>
-
-    <Button />
-    <Button />
+    <div class="navbar__btn-login">
+      <Button variant="text" text={t("btn.login")} />
+    </div>
+    <div class="navbar__btn-sign-up"><Button text={t("btn.sign_up")} /></div>
   </div>
+
+  <style>
+    .logo {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo__title {
+      font-family: "Port Lligat Slab", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem var(--spacing-64);
+    }
+
+    .navbar__box-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar__nav {
+      display: flex;
+      gap: 2rem;
+      margin-right: 0.5rem;
+    }
+
+    .navbar__nav li > a {
+      color: black;
+      text-wrap: nowrap;
+      opacity: 0.6;
+    }
+    .navbar__nav li > a:hover {
+      color: #333;
+      opacity: 1;
+    }
+
+    .navbar__nav li > a:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 4px;
+      background: var(--palette-secondary-main);
+      transition: width 0.3s;
+    }
+    .navbar__nav li > a:hover::after {
+      width: 100%;
+      transition: width 0.3s;
+    }
+
+    .navbar__vl {
+      border-left: 4px solid var(--palette-tertiary-main);
+      height: 3.75rem;
+      display: inline-block;
+      border-radius: 30px;
+      margin: 0 var(--spacing-16);
+    }
+
+    .navbar__btns {
+    }
+
+    .navbar__btn-login {
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        align-items: center;
+      }
+      .navbar {
+        justify-content: center;
+      }
+      .navbar__box-right {
+        display: none;
+      }
+    }
+  </style>
 </nav>
-
-<style></style>

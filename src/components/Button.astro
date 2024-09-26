@@ -1,8 +1,14 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const {
+  variant = "contained",
+  text = null,
+  size = "medium",
+  textWeight = "normal",
+  shadow = false,
+} = Astro.props;
 ---
 
-<button class="box__btn-cta">{t("btn.cta")}</button>
+<button
+  class=`btn-variant-${variant} btn-size-${size} btn-text-weigth-${textWeight} btn-shadow-${shadow}`
+  >{text}</button
+>

@@ -5,8 +5,13 @@
   --palette-primary-light: #1565c0;
 
   /* Color secondary */
+
   --palette-secondary-main: #ffcc33;
+  --palette-secondary-dark: #ccaa26;
+  --palette-secondary-light: #ffdb66;
   --palette-secondary-contrastText: #4d23bb;
+
+  --palette-tertiary-main: #4d23bb;
 
   /* Text */
   --palette-text-primary: rgba(0, 0, 0, 0.87);
@@ -140,6 +145,7 @@ h6 {
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
+  color: var(--palette-text-primary);
 }
 
 p,
@@ -149,10 +155,37 @@ a {
   font-weight: normal;
   font-style: normal;
   font-size: var(--font-size-body1);
+  color: var(--palette-text-primary);
+}
+
+li {
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: lighter;
+  font-style: normal;
+  font-size: var(--font-size-body1);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 a {
   color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
 }
 
 h1 {
@@ -179,6 +212,17 @@ h6 {
   font-size: var(--font-size-h6);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+}
+
 .text-overline {
   font-size: var(--font-size-overline);
 }
@@ -200,7 +244,7 @@ h6 {
 }
 
 button {
-  background-color: var(--palette-gray-500);
+  min-width: 6rem;
   width: 100%;
   height: 3rem;
   color: var(--palette-gray-50);
@@ -209,6 +253,17 @@ button {
   cursor: pointer;
   font-size: var(--font-size-caption);
   opacity: 0.8;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  background-color: black;
+
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--font-size-body1);
+
+  border: 2px solid transparent;
 }
 
 button:hover {
@@ -220,6 +275,39 @@ button:focus {
   border: 2px solid var(--palette-gray-300);
 }
 
+.btn-variant-text {
+  background-color: transparent;
+  color: black;
+  transition-timing-function: ease;
+  border: 2px solid transparent;
+}
+
+.btn-variant-text:hover {
+  background-color: var(--palette-secondary-light);
+  transition: background-color 0.2s;
+  border: 2px solid var(--palette-secondary-dark);
+}
+
+.btn-size-large {
+  height: 4rem;
+  font-size: var(--font-size-h5);
+}
+
+.btn-text-weigth-bold {
+  font-weight: bold;
+}
+
+.btn-shadow-true {
+  box-shadow: -14px -17px 0 #fc3;
+}
+
+/*
+ * Simple class
+ * */
 .hidden {
   display: none;
+}
+
+.list-none {
+  list-style: none;
 }
