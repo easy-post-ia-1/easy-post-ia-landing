@@ -5,7 +5,15 @@ export const languages = {
 
 export const defaultLang = "es";
 
-export const ui = {
+type TranslationKeys = {
+  [key: string]: string;
+};
+
+interface uiI18n {
+  [lang: string]: TranslationKeys;
+}
+
+export const ui: uiI18n = {
   en: {
     "nav.home": "Home",
     "nav.features": "Features",
@@ -17,7 +25,6 @@ export const ui = {
     "section.home.desc":
       "Web and App that helps you manage your social networks of your company.",
 
-    "section.features.title": "Features",
     "section.features.benefit1": "Reduce Time",
     "section.features.benefit2": "Organize with your Team",
     "section.features.benefit3": "Stay Clean Schedule",
@@ -38,6 +45,9 @@ export const ui = {
     "section.footer.about": "About",
     "section.footer.contacts": "Contacts",
     "section.footer.vacancies": "Vacancies",
+
+    "section.reviews.blockquote":
+      "The first rule of Fight Club is: No one talks about Fight Club.",
   },
   es: {
     "nav.home": "Inicio",
@@ -71,5 +81,8 @@ export const ui = {
     "section.footer.about": "Acerca de",
     "section.footer.contacts": "Contactos",
     "section.footer.vacancies": "Vacantes",
+
+    "section.reviews.blockquote":
+      "La primera regla del Club de la pelea es: Nadie habla sobre el Club de la pelea.",
   },
 } as const;
