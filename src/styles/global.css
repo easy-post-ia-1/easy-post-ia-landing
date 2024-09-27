@@ -2,7 +2,7 @@
   /* Color primary */
   --palette-primary-main: #2196f3;
   --palette-primary-dark: #1565c0;
-  --palette-primary-light: #1565c0;
+  --palette-primary-light: #97beff;
 
   /* Color secondary */
 
@@ -12,6 +12,11 @@
   --palette-secondary-contrastText: #4d23bb;
 
   --palette-tertiary-main: #4d23bb;
+
+  /*
+   *
+   * */
+  --palette-green: #d8ffe8;
 
   /* Text */
   --palette-text-primary: rgba(0, 0, 0, 0.87);
@@ -150,7 +155,7 @@ h6 {
 
 p,
 a {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Mono", serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -310,4 +315,9 @@ button:focus {
 
 .list-none {
   list-style: none;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }
