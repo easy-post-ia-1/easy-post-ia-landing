@@ -47,6 +47,7 @@
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-64: 64px;
+  --spacing-82: 82px;
 
   /* zIndex Variables */
   --z-index-mobile-stepper: 1000;
@@ -157,10 +158,11 @@ p,
 a {
   font-family: "Roboto Mono", serif;
   font-optical-sizing: auto;
-  font-weight: normal;
+  font-weight: lighter;
   font-style: normal;
   font-size: var(--font-size-body1);
   color: var(--palette-text-primary);
+  line-height: 1.5;
 }
 
 li {

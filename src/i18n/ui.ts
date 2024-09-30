@@ -69,7 +69,7 @@ export const ui: uiI18n = {
 
     "section.get_app.title": "Que tu vida sea más sencilla",
     "section.get_app.desc1":
-      "Descárgate la app y empieza a disfrutar tomando el control de tus redes sociales y",
+      "Descarga el app y empieza a disfrutar tomando el control de tus redes sociales y",
     "section.get_app.desc2": "simplifica tu vida",
 
     "btn.login": "Iniciar sesión",
