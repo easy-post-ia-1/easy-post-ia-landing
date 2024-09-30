@@ -8,6 +8,7 @@ import Reviews from "../components//Reviews.astro";
 import LanguagePicker from "../components/LanguagePicker.astro";
 
 import { getLangFromUrl } from "../i18n/utils";
+import InstallApp from "../components/InstallApp.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -63,6 +64,7 @@ const lang = getLangFromUrl(Astro.url);
     <Home />
     <Feature />
     <Reviews />
+    <InstallApp />
 
     <footer>
       <LanguagePicker />
