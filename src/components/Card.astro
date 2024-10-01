@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+
+const {
+  sourceImg = "",
+  title = "",
+  h = 200,
+  w = 200,
+  alt = "",
+  size = "small",
+} = Astro.props;
+---
+
+<article class=`benefit benefit-size-${size}`>
+  <Image
+    src={sourceImg}
+    alt={alt}
+    width={h}
+    height={w}
+    class="img-responsive"
+  />
+
+  <h5 class="benefit__text">{title}</h5>
+</article>
+
+<style>
+  .benefit {
+    height: 250px;
+    width: 120px;
+    background-color: var(--palette-secondary-main);
+    border-radius: 10px;
+    padding: var(--spacing-8) var(--spacing-32);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .benefit__text {
+    text-align: center;
+  }
+
+  .benefit-size-large {
+    height: 300px;
+    width: 150px;
+
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.5);
+  }
+</style>

@@ -1,0 +1,86 @@
+---
+import Title from "./Title.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="reviews">
+  <div class="review-title-mobile">
+    <Title title={t("section.reviews.title")} />
+  </div>
+  <div class="reviews">
+    <div class="review">
+      <div class="review__avatar"></div>
+      <blockquote cite="http://es.wikiquote.org/wiki/Fight_Club">
+        <h4>{t("section.reviews.blockquote")}</h4>
+        <p class="review__author">- Tyler Durden.</p>
+      </blockquote>
+    </div>
+
+    <div class="review-title"><h2>{t("section.reviews.title")}</h2></div>
+  </div>
+</section>
+
+<style>
+  #reviews {
+    margin-top: 8rem;
+  }
+
+  .review {
+    background-color: var(--palette-green);
+    border-radius: 20px;
+    flex: 4;
+    padding: 2rem;
+
+    min-height: 16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: row;
+  }
+
+  .reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 2rem 0;
+  }
+
+  .review-title-mobile {
+    display: none;
+  }
+
+  .review__avatar {
+    border-radius: 50%;
+    min-height: 100px;
+    min-width: 100px;
+    background-color: var(--palette-gray-600);
+  }
+
+  .review__author {
+    margin-top: 1rem;
+  }
+
+  .review-title {
+    flex: 2;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .review {
+      flex-direction: column;
+      text-align: center;
+    }
+    .review-title {
+      display: none;
+    }
+
+    .review-title-mobile {
+      display: block;
+    }
+  }
+</style>

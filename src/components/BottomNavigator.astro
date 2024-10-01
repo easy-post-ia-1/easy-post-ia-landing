@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { hash = "#home" } = Astro.props;
+// TODO: Simplified component
+// TODO: Fix error bottom navigation active
+---
+
+<section id="bottom-navigation">
+  <div class="bottom-navigator list-none">
+    <a
+      class={`bottom-navigator__option-box bottom-navigator__option ${hash === "#home" ? "active" : ""}`}
+      href="#home"
+    >
+      <div>
+        <Image
+          class=""
+          src="/public/assets/icons/home.svg"
+          alt="Home website"
+          width="24"
+          height="24"
+        />
+      </div>
+      <p class="bottom-navigator__paragraph text-caption">{t("nav.home")}</p>
+    </a>
+    <a
+      class={`bottom-navigator__option-box bottom-navigator__option ${hash === "#features" ? "active" : ""}`}
+      href="#features"
+    >
+      <div>
+        <Image
+          class=""
+          src="/public/assets/icons/love.svg"
+          alt="Features"
+          width="24"
+          height="24"
+        />
+      </div>
+      <p class="bottom-navigator__paragraph text-caption">
+        {t("nav.features")}
+      </p>
+    </a>
+    <a
+      class={`bottom-navigator__option-box bottom-navigator__option`}
+      href="#login-signup"
+    >
+      <div>
+        <Image
+          class=""
+          src="/public/assets/icons/cellphone_download.svg"
+          alt="Download"
+          width="24"
+          height="24"
+        />
+      </div>
+      <p class="bottom-navigator__paragraph text-caption">
+        {t("nav.login_signup")}
+      </p>
+    </a>
+    <a
+      class={`bottom-navigator__option-box bottom-navigator__option`}
+      href="#app"
+    >
+      <div>
+        <Image
+          class=""
+          src="/public/assets/icons/login.svg"
+          alt="Login Sign up"
+          width="24"
+          height="24"
+        />
+      </div>
+      <p class="bottom-navigator__paragraph text-caption">App</p>
+    </a>
+  </div>
+</section>
+
+<style>
+  #bottom-navigation {
+    position: relative;
+    width: 100%;
+    visibility: hidden;
+  }
+
+  .bottom-navigator {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--palette-primary-main);
+
+    position: fixed;
+    width: inherit;
+    bottom: 0;
+  }
+
+  .bottom-navigator__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .bottom-navigator__paragraph {
+    color: white;
+    font-weight: normal;
+  }
+
+  .bottom-navigator__option-box {
+    opacity: 0.7;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .bottom-navigator__option-box:hover,
+  .active {
+    font-weight: bold;
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    #bottom-navigation {
+      visibility: visible;
+    }
+  }
+</style>

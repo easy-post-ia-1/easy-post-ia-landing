@@ -1,0 +1,131 @@
+---
+import { Picture, Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+import Button from "./Button.astro";
+import arrowImg from "../icons/arrow_down.svg";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="home" class="home">
+  <div class="home__headline-box">
+    <div class="hidden home__img-mobile">
+      <Picture
+        formats={["png", "webp"]}
+        src="/assets/images/robot_envelope.webp"
+        alt="Robot"
+        width="200"
+        height="150"
+        class="img-responsive"
+      />
+    </div>
+    <h1 class="home__headline home__headline--border-bottom">
+      {t("section.home.headline")}
+    </h1>
+    <p class="home__desc text-light">{t("section.home.desc")}</p>
+  </div>
+
+  <div class="home__img-desktop">
+    <Picture
+      formats={["png", "webp"]}
+      src="/assets/images/girl_using_app.webp"
+      alt="Women using Easy Post IA"
+      width="490"
+      height="593"
+      class="img-responsive"
+    />
+  </div>
+
+  <div class="home__btn-box">
+    <Button
+      shadow={true}
+      size="large"
+      textWeight={"bold"}
+      text={t("btn.cta")}
+    />
+  </div>
+</section>
+<span class="home__arrow-box"
+  ><Image src={arrowImg} alt="Arrow down" width="10" height="66" /></span
+>
+
+<style>
+  .home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 1rem var(--spacing-64) 0 var(--spacing-64);
+  }
+
+  .home__desc {
+    margin-top: var(--spacing-32);
+  }
+
+  .home__headline-box {
+    text-align: left;
+    align-self: center;
+  }
+
+  .home-headline {
+    max-width: 804px;
+  }
+
+  .home__btn-box {
+    grid-column: 1 / 3;
+    justify-self: center;
+    align-self: center;
+    width: 16.25rem;
+  }
+
+  .home__headline--border-bottom {
+    display: inline;
+    background-image: linear-gradient(
+      to top,
+      var(--palette-secondary-main) 50%,
+      transparent 50%
+    );
+    background-position: 50% 84%;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .home__desc {
+    max-width: 18rem;
+  }
+
+  .home__btn-box {
+    max-width: 14rem;
+  }
+
+  .home__arrow-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .home {
+      padding: 1rem var(--spacing-16) 0 var(--spacing-16);
+
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .home__img-desktop {
+      display: none;
+    }
+
+    .home__img-mobile {
+      display: block;
+    }
+
+    .home__headline-box {
+      text-align: center;
+    }
+
+    .home__desc {
+      max-width: none;
+    }
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import Title from "./Title.astro";
+import Card from "./Card.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const cards = [
+  {
+    sourceImg: "/assets/images/cards/alarm.png",
+    alt: "Alarm",
+    w: 168,
+    h: 155,
+    title: t("section.features.benefit1"),
+  },
+  {
+    sourceImg: "/assets/images/cards/team.png",
+    alt: "Team",
+    w: 205,
+    h: 214,
+    title: t("section.features.benefit2"),
+    size: "large",
+  },
+  {
+    sourceImg: "/assets/images/cards/time_management.png",
+    alt: "Time management",
+    w: 207,
+    h: 176,
+    title: t("section.features.benefit3"),
+  },
+];
+---
+
+<section id="features">
+  <Title title={t("nav.features")} />
+
+  <div class="cards">{cards.map((card) => <Card {...card} />)}</div>
+  <div class="dog">
+    <Image
+      src="/assets/images/cards/beagle_dog.png"
+      alt="beagle dog smiling you"
+      width="100"
+      height="50"
+      class="img-responsive dog__beagle"
+    />
+  </div>
+</section>
+
+<style>
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8rem;
+  }
+
+  .dog {
+    position: relative;
+  }
+
+  .dog__beagle {
+    position: absolute;
+    right: 8rem;
+    top: -22rem;
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 4rem;
+    }
+
+    .dog__beagle {
+      position: absolute;
+      right: 0;
+      top: 1rem;
+    }
+  }
+</style>
