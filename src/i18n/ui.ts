@@ -3,7 +3,7 @@ export const languages = {
   es: "Spanish",
 };
 
-export const defaultLang = "es";
+export const defaultLang = "en";
 
 type TranslationKeys = {
   [key: string]: string;
@@ -18,7 +18,7 @@ export const ui: uiI18n = {
     "nav.home": "Home",
     "nav.features": "Features",
     "nav.about_us": "About Us",
-    "nav.login_signup": "Login/Signup",
+    "nav.login_signup": "Login",
 
     "section.home.headline":
       "Automate and connect, so you can focus on what truly matters.",
@@ -53,7 +53,7 @@ export const ui: uiI18n = {
     "nav.home": "Inicio",
     "nav.features": "Características",
     "nav.about_us": "Sobre nosotros",
-    "nav.login_signup": "Login/Signup",
+    "nav.login_signup": "Login",
 
     "section.home.headline":
       "Automatiza y conecta, para que puedas centrarte en lo que de verdad importa",
