@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer id="about-us" class="footer">
+  <h3 class="footer__title-product white-text">EASYPOST IA</h3>
+
+  <div class="footer__hand">
+    <Image
+      src="/assets/images/hand_ok.png"
+      alt="Hand ok"
+      width="300"
+      height="350"
+      class="img-responsive"
+    />
+  </div>
+  <div class="footer__info">
+    <div>
+      <Image
+        src="/logo_tertiary.png"
+        alt="Hand ok"
+        width="300"
+        height="350"
+        class="img-responsive"
+      />
+    </div>
+
+    <div>
+      <h5 class="footer__title-company xt">
+        {t("section.footer.company")}
+      </h5>
+      <ul class="footer__list-opt white-text list-none">
+        <li><a>{t("section.footer.about")}</a></li>
+        <li><a>{t("section.footer.contacts")}</a></li>
+        <li><a>{t("section.footer.vacancies")}<a></a></a></li>
+      </ul>
+    </div>
+
+    <style>
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        background-color: black;
+        margin-bottom: 3rem;
+      }
+
+      .footer__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .footer__title-product {
+        margin-top: var(--spacing-64);
+      }
+
+      .footer__list-opt {
+        margin-bottom: var(--spacing-64);
+        text-align: right;
+        line-height: 2.5;
+        margin-top: var(--spacing-32);
+        font-weight: normal;
+      }
+
+      .footer__title-company {
+        color: var(--palette-secondary-main);
+      }
+
+      .footer__hand {
+        position: relative;
+        top: 5rem;
+      }
+
+      .white-text {
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 10rem;
+        }
+        footer__title-product {
+          order: 1;
+        }
+
+        .footer__hand {
+          order: 2;
+        }
+      }
+    </style>
+  </div>
+</footer>
