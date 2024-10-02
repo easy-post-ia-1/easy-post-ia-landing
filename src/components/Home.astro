@@ -6,6 +6,8 @@ import arrowImg from "../icons/arrow_down.svg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+console.log("IMPORRRTTT: ", import.meta.env);
 ---
 
 <section id="home" class="home">
@@ -13,7 +15,7 @@ const t = useTranslations(lang);
     <div class="hidden home__img-mobile">
       <Picture
         formats={["png", "webp"]}
-        src="/assets/images/robot_envelope.webp"
+        src=`${import.meta.env.BASE_URL}/assets/images/robot_envelope.webp`
         alt="Robot"
         width="200"
         height="150"
@@ -29,7 +31,8 @@ const t = useTranslations(lang);
   <div class="home__img-desktop">
     <Picture
       formats={["png", "webp"]}
-      src="/assets/images/girl_using_app.webp"
+      src=`${import.meta.env.BASE_URL}/assets/images/girl_using_app.webp`
+      `
       alt="Women using Easy Post IA"
       width="490"
       height="593"
@@ -129,3 +132,7 @@ const t = useTranslations(lang);
     }
   }
 </style>
+
+<script>
+  console.debug("SDJKDSHJKDSJKDSJKHDSJKD");
+</script>
